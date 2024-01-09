@@ -1,7 +1,12 @@
 # AppABC
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
-
+Needed packages to run the app:
+  ng add @angular/material@16.2.12
+  npm install sweetalert@11.6.16
+  npm install moment@2.29.4 --save
+  npm install @angular/material-moment-adapter@16.2.12
+  npm install chat.js@3.9.1
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

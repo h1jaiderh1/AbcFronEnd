@@ -6,7 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Producto } from 'src/app/Interfaces/producto';
 import { ProductoService } from 'src/app/Services/producto.service'; 
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
-import { getLocaleDateFormat } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-modal-producto',
@@ -18,7 +18,12 @@ export class ModalProductoComponent implements OnInit{
   formularioProducto:FormGroup;
   tituloAccion: string = "Agregar";
   botonAccion: string = "Guardar";
-  
+  changedDate = '';
+  pipe = new DatePipe('es-CO');
+  today = new Date();
+  changeFormat(today:Date){
+    let ChangedFormat = this.pipe.transform(this.today, 'dd/MM/YYYY');
+  }
   constructor(
     private modalActual: MatDialogRef<ModalProductoComponent>,
     @Inject(MAT_DIALOG_DATA) public datosProducto: Producto,
@@ -49,12 +54,13 @@ export class ModalProductoComponent implements OnInit{
         cantidad: this.datosProducto.cantidad,
         valorUnitario: this.datosProducto.valorUnitario,
         isActive: this.datosProducto.isActive.toString,
-        fechaActualizacion: this.datosProducto.fechaActualizacion.toString
+        fechaActualizacion: this.datosProducto.fechaActualizacion
       })
     }
   }
 
   guardarEditar_Producto(){
+    
     const _producto: Producto = {
       idProducto: this.datosProducto == null ? 0: this.datosProducto.idProducto,
       nombre: this.formularioProducto.value.nombre,

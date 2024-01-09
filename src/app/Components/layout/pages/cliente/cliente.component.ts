@@ -91,8 +91,7 @@ export class ClienteComponent implements OnInit{
     }).then((resultado) =>{
 
       if(resultado.isConfirmed){
-          debugger
-        this._clienteServicio.eliminar(cliente).subscribe({
+        this._clienteServicio.eliminar(cliente.idCliente).subscribe({
           next:(data) =>{
 
             if(data.status){

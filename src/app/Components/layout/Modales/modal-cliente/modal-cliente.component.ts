@@ -66,10 +66,9 @@ export class ModalClienteComponent implements OnInit{
   }
     
   guardarEditar_Cliente(){
-    debugger
     const _cliente: Cliente = {
       idCliente: this.datosCliente == null ? this.formularioCliente.value.idCliente: this.datosCliente.idCliente,
-      numeroDocumento: this.datosCliente == null ? this.formularioCliente.value.numeroDocumento: this.datosCliente.numeroDocumento,
+      numeroDocumento: this.datosCliente == null ? this.formularioCliente.value.numeroDocumento: this.formularioCliente.value.numeroDocumento,
       tipo: this.formularioCliente.value.tipo,
       correo: this.formularioCliente.value.correo,
       telefono: this.formularioCliente.value.telefono,

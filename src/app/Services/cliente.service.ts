@@ -28,7 +28,7 @@ export class ClienteService {
     return this.http.put<ResponseApi>(`${this.urlApi}Editar`, request)
   }
 
-  eliminar(id:Cliente):Observable<ResponseApi>{
+  eliminar(id:number):Observable<ResponseApi>{
     return this.http.delete<ResponseApi>(`${this.urlApi}Eliminar/${id}`)
   }
 

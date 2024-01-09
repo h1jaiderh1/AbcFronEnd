@@ -17,7 +17,7 @@ import Swal from 'sweetalert2';
 })
 export class UsuarioComponent implements OnInit, AfterViewInit{
 
-  columnasTable: string[] = ['nombres','apellidos','usuario','estado','acciones','identificacionCiudadania'];
+  columnasTable: string[] = ['nombres','apellidos','identificacionCiudadania','usuario','estado','acciones'];
   dataInicio:Usuario[] = [];
   dataListaUsuarios = new MatTableDataSource(this.dataInicio);
 

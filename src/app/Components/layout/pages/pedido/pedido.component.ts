@@ -121,7 +121,7 @@ export class PedidoComponent implements OnInit{
   }
 
   registrarPedido(){
-    debugger
+    
     if(this.listaProductosParaPedido.length > 0){
       this.bloquearBotonRegistrar = true;
       const request: Pedido = {
@@ -133,7 +133,7 @@ export class PedidoComponent implements OnInit{
         fechaCierre:'12/12/2000',
         isActive:1,
         fechaFacturacion:'12/12/2000',
-        idCliente:0,
+        idCliente:1,
       }
 
       this._pedidoServicio.registrar(request).subscribe({
